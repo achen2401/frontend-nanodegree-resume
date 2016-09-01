@@ -53,10 +53,10 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a class="url" href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+ var internationalizeButton = '<button>Internationalize</button>';
+ var googleMap = '<div id="map"></div>';
 
 
 /*
@@ -69,6 +69,17 @@ $(document).ready(function() {
     $name.html(iName);
   });
 });
+
+function inName(s) {
+  var n = s.split(' ');
+  var fname = n[0].charAt(0).toUpperCase() + n[0].substr(1);
+  var la = n[1];
+  var lname = [];
+  for (var i = 0; i < la.length; i++){
+      lname.push(la.charAt(i).toUpperCase());
+  }
+  return ''.concat(fname, ' ', lname.join(''));
+}
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
@@ -87,6 +98,7 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+ // logClicks(loc.pageX, loc.pageY)
 });
 
 
@@ -145,6 +157,7 @@ function initializeMap() {
       locations.push(job.location);
     });
 
+
     return locations;
   }
 
@@ -178,6 +191,8 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(marker.get('map'), marker);
+
     });
 
     // this is where the pin actually gets added to the map.
@@ -239,7 +254,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds

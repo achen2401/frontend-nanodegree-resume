@@ -18,17 +18,25 @@ h6 {
   overflow: auto;
 }
 
+#workExperience,
+#education,
+#projects,
+#mapDiv {
+  margin: 1% auto;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0.5% 5%;
 }
 
 h1 {
-  font-size: 40px;
-  color: #f5a623;
+  font-size: 36px;
+  color: #B0A8B7;
   line-height: 48px;
   display: inline;
+  font-style: italic;
 }
 
 h2 {
@@ -61,13 +69,13 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
   color: #999;
   line-height: 16px;
   float: left;
+  padding: 0 4px;
 }
 
 .location-text {
@@ -86,10 +94,16 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #34B8C1;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  margin-right: 4px;
+}
+
+.url {
+  color: #15777E;
+  margin-top: -0.1em;
 }
 
 .welcome-message {
@@ -100,16 +114,17 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  padding-top: 1.8em;
+  color: #CAB2A0;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #CAAE9B;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #CAAE9B;
 }
 
 .white-text {
@@ -129,7 +144,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #525050;
 }
 
 .flex-box {
@@ -165,6 +180,8 @@ ul {
 
 img {
   padding: 10px;
+  width: 320px;
+  height: 220px;
 }
 
 span {
@@ -173,6 +190,15 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#lets-connect h2 {
+  color: #65625D;
+}
+
+.education-entry h3 {
+  padding: 0.6em 0 0 0;
+  font-size: 1.1em;
 }
 
 /* Media queries to handle various device widths */
